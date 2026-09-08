@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>إكسل وإنجاز للمقاولات</title>
     <style>
-        /* ===== الأساسيات ===== */
         * {
             margin: 0;
             padding: 0;
@@ -30,7 +29,6 @@
             display: block;
         }
 
-        /* ===== الألوان ===== */
         :root {
             --navy: #071b2b;
             --gold: #d6ad59;
@@ -40,7 +38,6 @@
             --white: #fff;
         }
 
-        /* ===== الهيدر ===== */
         header {
             position: sticky;
             top: 0;
@@ -112,17 +109,29 @@
             color: #fff;
         }
 
-        /* ===== القسم الرئيسي ===== */
         .hero {
             min-height: 520px;
             display: flex;
             align-items: center;
+            position: relative;
             background: linear-gradient(135deg, rgba(7, 27, 43, 0.92), rgba(7, 27, 43, 0.7)),
                 url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1200') center/cover no-repeat;
             color: #fff;
             padding: 40px 0;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('logo-watermark.png') center/40% no-repeat;
+            opacity: 0.06;
+            pointer-events: none;
+            z-index: 1;
         }
         .hero-content {
+            position: relative;
+            z-index: 2;
             max-width: 700px;
         }
         .hero .kicker {
@@ -182,7 +191,6 @@
             font-weight: 600;
         }
 
-        /* ===== الأقسام العامة ===== */
         section {
             padding: 64px 0;
         }
@@ -206,7 +214,6 @@
             margin: auto;
         }
 
-        /* ===== من نحن ===== */
         .about-grid {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -249,7 +256,6 @@
             font-size: 13px;
         }
 
-        /* ===== الخدمات ===== */
         .services {
             background: var(--light);
         }
@@ -286,7 +292,6 @@
             font-size: 14px;
         }
 
-        /* ===== الأعمال ===== */
         .works {
             background: var(--navy);
         }
@@ -336,7 +341,6 @@
             margin-top: 4px;
         }
 
-        /* ===== لماذا نحن ===== */
         .why {
             background: var(--light);
             text-align: center;
@@ -368,7 +372,6 @@
             font-size: 14px;
         }
 
-        /* ===== التواصل ===== */
         .contact {
             background: linear-gradient(135deg, #071b2b, #0c314a);
             color: #fff;
@@ -408,7 +411,6 @@
             font-size: 20px;
         }
 
-        /* ===== الفوتر ===== */
         footer {
             padding: 22px 0;
             background: #04111b;
@@ -417,7 +419,6 @@
             font-size: 13px;
         }
 
-        /* ===== استجابة ===== */
         @media (max-width: 900px) {
             nav {
                 display: none;
@@ -461,14 +462,13 @@
 
 <body>
 
-    <!-- ===== الهيدر ===== -->
     <header>
         <div class="container nav">
             <div class="brand">
                 <div class="brand-logo">EI</div>
                 <div class="brand-text">
-                    <strong>إكسل وإنجاز</strong>
-                    <small>EXCEL &amp; INJAZ</small>
+                    <strong>إكسل وإنجاز للمقاولات</strong>
+                    <small>EXCEL &amp; INJAZ CONTRACTING</small>
                 </div>
             </div>
             <nav>
@@ -484,21 +484,19 @@
 
     <main>
 
-        <!-- ===== القسم الرئيسي ===== -->
         <section class="hero" id="home">
             <div class="container hero-content">
-                <div class="kicker">إكسل وإنجاز · EXCEL &amp; INJAZ</div>
+                <div class="kicker">إكسل وإنجاز للمقاولات</div>
                 <h1>نفذ أعمال الحديد <br /><span>للمشاريع الحالية والقائمة</span></h1>
                 <p>نقدم حلولاً متكاملة في أعمال الحديد والمنشآت المعدنية، من التصميم والتصنيع إلى التركيب والتنفيذ.</p>
                 <div class="hero-buttons">
-                    <a href="#works" class="btn btn-primary">📂 استعرض أعمالنا</a>
-                    <a href="#contact" class="btn btn-outline">📞 تواصل معنا</a>
+                    <a href="#works" class="btn btn-primary">استعرض أعمالنا</a>
+                    <a href="#contact" class="btn btn-outline">تواصل معنا</a>
                 </div>
-                <div class="hero-tag">جودة · التزام · سرعة في التنفيذ</div>
+                <div class="hero-tag">جودة - التزام - سرعة في التنفيذ</div>
             </div>
         </section>
 
-        <!-- ===== من نحن ===== -->
         <section id="about">
             <div class="container about-grid">
                 <div>
@@ -514,7 +512,6 @@
             </div>
         </section>
 
-        <!-- ===== خدماتنا ===== -->
         <section class="services" id="services">
             <div class="container">
                 <div class="section-head">
@@ -532,30 +529,28 @@
             </div>
         </section>
 
-        <!-- ===== أعمالنا ===== -->
         <section class="works" id="works">
             <div class="container">
                 <div class="section-head">
-                    <div class="label">📸 أعمالنا</div>
+                    <div class="label">أعمالنا</div>
                     <h2>نماذج من مشاريعنا</h2>
                     <p>نفخر بتنفيذ مشاريع متنوعة في مختلف مجالات الحديد</p>
                 </div>
                 <div class="works-grid">
-                    <div class="work-card"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=400&fit=crop" alt="هيكل معدني"><div class="work-info"><strong>هياكل معدنية</strong><span class="tag">مصنع / مستودع</span></div></div>
-                    <div class="work-card"><img src="https://images.unsplash.com/photo-1590568268961-d908a375fec9?w=600&h=400&fit=crop" alt="بوابات"><div class="work-info"><strong>أبواب وبوابات</strong><span class="tag">مداخل / فلل</span></div></div>
-                    <div class="work-card"><img src="https://images.unsplash.com/photo-1590568268961-d908a375fec9?w=600&h=400&fit=crop" alt="أسوار"><div class="work-info"><strong>أسوار حديدية</strong><span class="tag">منازل / منشآت</span></div></div>
-                    <div class="work-card"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=400&fit=crop" alt="سلالم"><div class="work-info"><strong>سلالم وهاندريل</strong><span class="tag">داخلية / خارجية</span></div></div>
-                    <div class="work-card"><img src="https://images.unsplash.com/photo-1590568268961-d908a375fec9?w=600&h=400&fit=crop" alt="مظلات"><div class="work-info"><strong>مظلات ومواقف</strong><span class="tag">مداخل / حدائق</span></div></div>
-                    <div class="work-card"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=400&fit=crop" alt="مصاعد"><div class="work-info"><strong>تأسيس المصاعد</strong><span class="tag">مباني سكنية / تجارية</span></div></div>
+                    <div class="work-card"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=400&fit=crop" alt="هيكل معدني"><div class="work-info"><strong>هياكل معدنية</strong><span class="tag">مصنع - مستودع</span></div></div>
+                    <div class="work-card"><img src="https://images.unsplash.com/photo-1590568268961-d908a375fec9?w=600&h=400&fit=crop" alt="بوابات"><div class="work-info"><strong>أبواب وبوابات</strong><span class="tag">مداخل - فلل</span></div></div>
+                    <div class="work-card"><img src="https://images.unsplash.com/photo-1590568268961-d908a375fec9?w=600&h=400&fit=crop" alt="أسوار"><div class="work-info"><strong>أسوار حديدية</strong><span class="tag">منازل - منشآت</span></div></div>
+                    <div class="work-card"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=400&fit=crop" alt="سلالم"><div class="work-info"><strong>سلالم وهاندريل</strong><span class="tag">داخلية - خارجية</span></div></div>
+                    <div class="work-card"><img src="https://images.unsplash.com/photo-1590568268961-d908a375fec9?w=600&h=400&fit=crop" alt="مظلات"><div class="work-info"><strong>مظلات ومواقف</strong><span class="tag">مداخل - حدائق</span></div></div>
+                    <div class="work-card"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=400&fit=crop" alt="مصاعد"><div class="work-info"><strong>تأسيس المصاعد</strong><span class="tag">مباني سكنية - تجارية</span></div></div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== لماذا نحن ===== -->
         <section class="why" id="why">
             <div class="container">
                 <div class="section-head">
-                    <div class="label">لماذا إكسل وإنجاز؟</div>
+                    <div class="label">لماذا إكسل وإنجاز للمقاولات؟</div>
                     <h2>شريكك الموثوق في أعمال الحديد</h2>
                 </div>
                 <div class="why-grid">
@@ -567,11 +562,10 @@
             </div>
         </section>
 
-        <!-- ===== تواصل معنا ===== -->
         <section class="contact" id="contact">
             <div class="container contact-grid">
                 <div>
-                    <h2>📞 تواصل معنا</h2>
+                    <h2>تواصل معنا</h2>
                     <p>نرحب باستفساراتكم وطلباتكم، فريقنا جاهز للإجابة على جميع تساؤلاتكم وتقديم العروض المناسبة لمشاريعكم.</p>
                 </div>
                 <div class="contact-links">
@@ -584,14 +578,12 @@
 
     </main>
 
-    <!-- ===== الفوتر ===== -->
     <footer>
         <div class="container">
-            © 2026 إكسل وإنجاز للمقاولات — جميع الحقوق محفوظة
+            © 2026 إكسل وإنجاز للمقاولات - جميع الحقوق محفوظة
         </div>
     </footer>
 
-    <!-- ===== تبديل اللغة ===== -->
     <script>
         function toggleLanguage() {
             document.body.classList.toggle("en");
@@ -609,7 +601,6 @@
     </script>
 
     <style>
-        /* دعم اللغة الإنجليزية */
         body.en .ar {
             display: none;
         }
